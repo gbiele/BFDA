@@ -51,7 +51,7 @@ BFDA.sim <- function(expected.ES, type=c("t.between", "t.paired", "correlation",
 
 	design <- match.arg(design, c("sequential", "fixed.n"))
 
-	type <- match.arg(type, c("t.between", "t.paired", "correlation", "abtest"))
+	type <- match.arg(type, c("t.between", "t.paired", "correlation", "abtest","i.null.paired"))
 
 	prior <- prior.check.function(prior)
 	
@@ -201,6 +201,7 @@ print.BFDA <- function(x, ...) {
 	ES.type <- switch(x$settings$type,
 		"t.between" = "Cohen's d",
 		"t.paired" = "Cohen's d",
+		"i.null.paired" = "Cohen's d",
 		"correlation" = "correlation",
 		"abtest" = x$settings$options.sample,
 		{paste0("ERROR: Test type ", x$settings$type, " not recognized.")}	#default
