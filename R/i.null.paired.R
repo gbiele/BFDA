@@ -1,5 +1,5 @@
 ## ======================================================================
-## These are the simulation files for a paired t-test
+## These are the simulation files for a paired interval-null test
 ## ======================================================================
 
 # ---------------------------------------------------------------------
@@ -70,9 +70,8 @@ prior.check.i.null.paired <- function(prior=NULL){
 # BF.test.function: return log(BF10)
 
 
-BF.test.i.null.paired <- function(SAMP, rscale = sqrt(2)/2, null.interval=c(-.1,.1), prior=NULL) {
-  
-  bfInterval = BayesFactor::ttestBF(SAMP, nullInterval = null.interval, rscale = prior[[2]][["prior.scale"]])
+BF.test.i.null.paired <- function(SAMP, alternative = NULL, freq.test = NULL, prior=NULL, null.int=c(-.1,.1)) {
+  bfInterval = BayesFactor::ttestBF(SAMP, nullInterval = null.int, rscale = prior[[2]][["prior.scale"]])
   BF = bfInterval[2] / bfInterval[1]
   
   # returns the log(BF10)

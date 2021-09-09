@@ -2,7 +2,7 @@ Encoding: UTF-8
 Package: BFDA
 Type: Package
 Title: Bayes Factor Design Analysis
-Version: 0.5.0
+Version: 0.5.1
 Date: 2019-07-25
 Authors@R: c(
 		person(c("Felix", "D."), "Schönbrodt", email = "felix@nicebread.de", role = c("aut", "cre")),
@@ -12,7 +12,8 @@ Maintainer: Felix D. Schönbrodt <felix@nicebread.de>
 Depends:
     doParallel,
     dplyr,
-    ggplot2
+    ggplot2,
+    BayesFactor
 Imports:
     TeachingDemos,
     Rcpp,
